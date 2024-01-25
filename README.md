@@ -17,6 +17,11 @@ DB_DATABASE=db.sqlite3
 echo "sqlite:///`pwd`/db.sqlite3"
 echo $DATABASE_URL
 export DATABASE_URL="sqlite:///`pwd`/db.sqlite3"
+export DATABASE_URL="" # reset
+# or in .env
+DB_NAME=db.sqlite3
+DATABASE_URL="sqlite:///`pwd`/${DB_NAME}"
+DB_DATABASE="${DB_NAME}"
 ```
 
 ```sh
@@ -39,7 +44,6 @@ sqlite3 db.sqlite3
 .schema --indent users
 
 select * FROM products # gives error
-SELECT * FROM products # gives error sqlite3
 SELECT id FROM products;
 ```
 
@@ -64,4 +68,11 @@ php artisan make:model Product
 php artisan key:generate --show
 # .env
 APP_KEY=base64:cjB8wJHrR2lmUrQzNbiQ75YWjoJRh9dxlJIZOayj0jI=
+```
+
+## Update
+
+```sql
+UPDATE products SET image = "game.jpeg" WHERE image = "game.png";
+SELECT * FROM products;
 ```
