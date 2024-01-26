@@ -59,7 +59,7 @@ class Product extends Model
 
     public function setImage($image)
     {
-        return $this->attributes['description'] = $image;
+        return $this->attributes['image'] = $image;
     }
 
     public function getPrice()

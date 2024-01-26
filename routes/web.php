@@ -30,5 +30,10 @@ Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('p
 Route::get('/products/{id}', 'App\Http\Controllers\ProductController@show')->name('products.show');
 
 # Admin
+
+// $adminUrl = "App\Http\Controllers\Admin";
+// $adminHomeController = $adminUrl . '\AdminHomeController';
+
 Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->name('admin.home.index');
 Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductsController@index')->name('admin.products.index');
+Route::post('/admin/products/store', 'App\Http\Controllers\Admin\AdminProductsController@store')->name('admin.products.store');

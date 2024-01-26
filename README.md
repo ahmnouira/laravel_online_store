@@ -1,5 +1,10 @@
 #
 
+##  Missing parts
+
+* ch8
+* ch10
+
 ## Serve
 
 ```sh
@@ -45,6 +50,7 @@ sqlite3 db.sqlite3
 
 select * FROM products # gives error
 SELECT id FROM products;
+SELECT description FROM products;
 ```
 
 ## Inserting products
