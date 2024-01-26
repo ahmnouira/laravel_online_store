@@ -38,4 +38,22 @@ class AdminProductsController extends Controller
 
         return back();
     }
+
+    public function store2(Request $request)
+    {
+        $request->validate([
+            "name" => "required|max:255",
+            "description" => "required",
+            "price" => "required|numeric|gt:0", // must be numeric and greater than zero
+            "image" => "image"
+        ]);
+
+        $creationData = $request->only([
+            'name', 'description', 'price'
+        ]);
+        $creationData['image'] = 'submarine.png';
+        Product::create($creationData);
+
+        return back();
+    }
 }

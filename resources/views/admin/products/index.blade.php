@@ -14,7 +14,7 @@
         </ul>
         @endif
 
-        <form method="post" action="{{route('admin.products.store')}}">
+        <form method="post" action="{{route('admin.products.store2')}}">
             @csrf
             <div class="row">
                 <div class="col">

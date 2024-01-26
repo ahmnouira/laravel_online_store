@@ -21,6 +21,13 @@ class Product extends Model
      * $this->attributes['updated_at'] - timestamp - contains the product update date
      */
 
+
+    // Laravel protects us against mass assignment. By default, we cannot create a new product by invoking
+    // the create method and passing an array with multiple data that refers to our model attributes.
+    protected $fillable =
+    ['name', 'description', 'price', 'image'];
+
+
     public function getId()
     {
         return $this->attributes['id'];
