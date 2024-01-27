@@ -83,8 +83,20 @@
                 <tr>
                     <td>{{$product->getId()}}</td>
                     <td>{{$product->getName()}}</td>
-                    <td>Edit</td>
-                    <td>Delete</td>
+                    <td>
+                        <button class="btn btn-primary">
+                            <i class="bi-pencil"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <form action="{{route('admin.products.delete', $product->getId())}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">
+                                <i class="bi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

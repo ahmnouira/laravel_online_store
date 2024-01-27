@@ -38,3 +38,4 @@ Route::get('/admin', 'App\Http\Controllers\Admin\AdminHomeController@index')->na
 Route::get('/admin/products', 'App\Http\Controllers\Admin\AdminProductsController@index')->name('admin.products.index');
 Route::post('/admin/products/store', 'App\Http\Controllers\Admin\AdminProductsController@store')->name('admin.products.store');
 Route::post('/admin/products/store2', 'App\Http\Controllers\Admin\AdminProductsController@store2')->name('admin.products.store2');
+Route::delete('/admin/products/{id}/delete', 'App\Http\Controllers\Admin\AdminProductsController@delete')->name('admin.products.delete');
