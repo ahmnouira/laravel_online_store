@@ -82,3 +82,14 @@ APP_KEY=base64:cjB8wJHrR2lmUrQzNbiQ75YWjoJRh9dxlJIZOayj0jI=
 UPDATE products SET image = "game.jpeg" WHERE image = "game.png";
 SELECT * FROM products;
 ```
+
+## Storage
+
+To make files accessible from the web, we must create a "symbolic link" from public/storage to storage/app/public.
+
+```sh
+php artisan storage:link
+   INFO  The [public/storage] link has been connected to [storage/app/public].  
+```
+
+* The users only can access files located inside `public/` folder. The rest of folders and files cannot be accessed.
