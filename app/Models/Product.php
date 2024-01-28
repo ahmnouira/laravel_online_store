@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Product extends Model
 {
@@ -24,9 +25,18 @@ class Product extends Model
 
     // Laravel protects us against mass assignment. By default, we cannot create a new product by invoking
     // the create method and passing an array with multiple data that refers to our model attributes.
-    protected $fillable =
-    ['name', 'description', 'price', 'image'];
+    protected $fillable = ['name', 'description', 'price', 'image'];
 
+
+    public static function validate(Request $request)
+    {
+        $request->validate([
+            "name" => "required|max:255",
+            "description" => "required",
+            "price" => "required|numeric|gt:0", // must be numeric and greater than zero
+            "image" => "image"
+        ]);
+    }
 
     public function getId()
     {
