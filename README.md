@@ -114,3 +114,22 @@ composer require laravel/ui
 php artisan ui bootstrap --auth
    WARN  Please run [npm install && npm run dev] to compile your fresh scaffolding.  
 ```
+
+## Alter user migration
+
+```sh
+php artisan make:migration alter_users_table
+```
+
+Rollback
+
+```sh
+php artisan migrate:rollback
+```
+
+```sql
+sqlite3 db.sqlite3
+.schema --indent users
+
+SELECT * FROM users;
+```
