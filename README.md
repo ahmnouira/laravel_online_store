@@ -139,3 +139,65 @@ SELECT * FROM users;
 ```sh
 cp -R  public/img/*.{jpeg,png} storage/app/public
 ```
+
+## Laravel Tinker
+
+```sh
+php artisan tinker
+```
+
+```php
+$user = new App\Models\User(); 
+$user->setName('Ahmed Nouira');
+$user->setEmail('ahmnouira@gmail.com');
+$user->setPassword(bcrypt('passwordVerySecret)'))
+$user->seBalance(5000)
+$user->setRole('admin'); 
+$user->save(); 
+exit; 
+```
+
+```sh
+$products = App\Models\Product::all()
+
+= Illuminate\Database\Eloquent\Collection {#7201
+    all: [
+      App\Models\Product {#7203
+        id: 1,
+        name: "TV",
+        description: "Best TV",
+        image: "game.jpeg",
+        price: 1000,
+        created_at: "2021-10-01 00:00:00",
+        updated_at: "2021-10-01 00:00:00",
+      },
+      App\Models\Product {#7204
+        id: 2,
+        name: "iPhone",
+        description: "Best iPhone",
+        image: "safe.png",
+        price: 999,
+        created_at: "2021-10- 01 00:00:00",
+        updated_at: "2021-10-01 00:00:00",
+      },
+      App\Models\Product {#7205
+        id: 3,
+        name: "Chromecast",
+        description: "Best Chromecast",
+        image: "submarine.png",
+        price: 30,
+        created_at: "2021-10-01 00:00:00",
+        updated_at: "2021-10-01 00:00:00",
+      },
+      App\Models\Product {#7206
+        id: 4,
+        name: "Glasses",
+        description: "Best Glasses",
+        image: "game.jpeg",
+        price: 100,
+        created_at: "2021- 10-01 00:00:00",
+        updated_at: "2021-10-01 00:00:00",
+      },
+    ],
+  }
+```
