@@ -67,10 +67,10 @@ SELECT description FROM products;
 ## Inserting products
 
 ```sql
-INSERT INTO products (id, name, description, image, price, created_at, updated_at) VALUES (NULL, 'TV', 'Best TV', 'game.png', '1000', '2021-10-01 00:00:00', '2021-10-01 00:00:00');
+INSERT INTO products (id, name, description, image, price, created_at, updated_at) VALUES (NULL, 'TV', 'Best TV', 'game.jpeg', '1000', '2021-10-01 00:00:00', '2021-10-01 00:00:00');
 INSERT INTO products (id, name, description, image, price, created_at, updated_at) VALUES (NULL, 'iPhone', 'Best iPhone', 'safe.png', '999', '2021-10- 01 00:00:00', '2021-10-01 00:00:00');
 INSERT INTO products (id, name, description, image, price, created_at, updated_at) VALUES (NULL, 'Chromecast', 'Best Chromecast', 'submarine.png', '30', '2021-10-01 00:00:00', '2021-10-01 00:00:00');
-INSERT INTO products (id, name, description, image, price, created_at, updated_at) VALUES (NULL, 'Glasses', 'Best Glasses', 'game.png', '100', '2021- 10-01 00:00:00', '2021-10-01 00:00:00');
+INSERT INTO products (id, name, description, image, price, created_at, updated_at) VALUES (NULL, 'Glasses', 'Best Glasses', 'game.jpeg', '100', '2021- 10-01 00:00:00', '2021-10-01 00:00:00');
 ```
 
 ## Creating Product model
@@ -121,7 +121,7 @@ php artisan ui bootstrap --auth
 php artisan make:migration alter_users_table
 ```
 
-Rollback
+Rollback: delete all the data also  !!!
 
 ```sh
 php artisan migrate:rollback
@@ -132,4 +132,10 @@ sqlite3 db.sqlite3
 .schema --indent users
 
 SELECT * FROM users;
+```
+
+## Copy public img to storage
+
+```sh
+cp -R  public/img/*.{jpeg,png} storage/app/public
 ```
