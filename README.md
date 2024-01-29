@@ -104,3 +104,13 @@ php artisan storage:link
 ```
 
 * The users only can access files located inside `public/` folder. The rest of folders and files cannot be accessed.
+
+## Login system
+
+Generate the frontend scaffolding and the login system.
+
+```sh
+composer require laravel/ui
+php artisan ui bootstrap --auth
+   WARN  Please run [npm install && npm run dev] to compile your fresh scaffolding.  
+```

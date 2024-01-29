@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,3 +82,5 @@ Route::put(
     '/admin/products/{id}/update',
     'App\Http\Controllers\Admin\AdminProductsController@update'
 )->name('admin.products.update');
+
+Auth::routes();
