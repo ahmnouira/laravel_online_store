@@ -2,7 +2,6 @@
 
 ##  Missing parts
 
-* ch8
 * ch10
 
 ## Serve
@@ -10,6 +9,18 @@
 ```sh
 php artisan serve
 ```
+
+## Running PHP_CodeSniffer
+
+```sh
+./vendor/bin/phpcs
+# fix issues
+./vendor/bin/phpcbf
+```
+
+* PHP_CodeSniffer does not work well with blade files. A formatting Visual Studio Code plugin called Format HTML in PHP can help you to format your Blade views.
+
+* PHP_CodeSniffer does not automatically fix all errors. For example, there is a standard of using `camelCase` coding style to name methods.
 
 ## sqlite configuration
 

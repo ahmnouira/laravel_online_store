@@ -14,16 +14,17 @@ class Product extends Model
     /**
      * PRODUCT ATTRIBUTES
      * $this->attributes['id'] - int contains the product primary key(id)
-     * $this->attributes['name'] - string - contains the product name 
+     * $this->attributes['name'] - string - contains the product name
      * $this->attributes['description'] - string - contains the product description
-     * $this->attributes['image'] - string - contains the product image 
+     * $this->attributes['image'] - string - contains the product image
      * $this->attributes['price'] - int - contains the product price
      * $this->attributes['created_at'] - timestamp -contains the product creation date
      * $this->attributes['updated_at'] - timestamp - contains the product update date
      */
 
 
-    // Laravel protects us against mass assignment. By default, we cannot create a new product by invoking
+    // Laravel protects us against mass assignment.
+    // By default, we cannot create a new product by invoking
     // the create method and passing an array with multiple data that refers to our model attributes.
     protected $fillable = ['name', 'description', 'price', 'image'];
 
@@ -33,7 +34,8 @@ class Product extends Model
         $request->validate([
             "name" => "required|max:255",
             "description" => "required",
-            "price" => "required|numeric|gt:0", // must be numeric and greater than zero
+            // must be numeric and greater than zero
+            "price" => "required|numeric|gt:0",
             "image" => "image"
         ]);
     }
@@ -47,10 +49,12 @@ class Product extends Model
     {
         return $this->attributes['id'] = $id;
     }
-    // The definition and use of getters and setters guarantee a unique access point to the model attributes.
+    // The definition and use of getters and setters
+    // guarantee a unique access point to the model attributes.
     public function getName()
     {
-        // Req: We need to display all products' names in uppercase over the entire application.
+        // Req: We need to display all products' names in uppercase
+        //  over the entire application.
         return strtoupper($this->attributes['name']);
     }
 
