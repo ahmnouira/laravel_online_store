@@ -59,34 +59,36 @@ Route::get(
 // $adminUrl = "App\Http\Controllers\Admin";
 // $adminHomeController = $adminUrl . '\AdminHomeController';
 
-Route::get(
-    '/admin',
-    'App\Http\Controllers\Admin\AdminHomeController@index'
-)->name('admin.home.index');
-Route::get(
-    '/admin/products',
-    'App\Http\Controllers\Admin\AdminProductsController@index'
-)->name('admin.products.index');
-Route::post(
-    '/admin/products/store',
-    'App\Http\Controllers\Admin\AdminProductsController@store'
-)->name('admin.products.store');
-Route::post(
-    '/admin/products/store2',
-    'App\Http\Controllers\Admin\AdminProductsController@store2'
-)->name('admin.products.store2');
-Route::delete(
-    '/admin/products/{id}/delete',
-    'App\Http\Controllers\Admin\AdminProductsController@delete'
-)->name('admin.products.delete');
-# Edit
-Route::get(
-    '/admin/products/{id}/edit',
-    'App\Http\Controllers\Admin\AdminProductsController@edit'
-)->name('admin.products.edit');
-Route::put(
-    '/admin/products/{id}/update',
-    'App\Http\Controllers\Admin\AdminProductsController@update'
-)->name('admin.products.update');
+Route::middleware('admin')->group(function () {
+    Route::get(
+        '/admin',
+        'App\Http\Controllers\Admin\AdminHomeController@index'
+    )->name('admin.home.index');
+    Route::get(
+        '/admin/products',
+        'App\Http\Controllers\Admin\AdminProductsController@index'
+    )->name('admin.products.index');
+    Route::post(
+        '/admin/products/store',
+        'App\Http\Controllers\Admin\AdminProductsController@store'
+    )->name('admin.products.store');
+    Route::post(
+        '/admin/products/store2',
+        'App\Http\Controllers\Admin\AdminProductsController@store2'
+    )->name('admin.products.store2');
+    Route::delete(
+        '/admin/products/{id}/delete',
+        'App\Http\Controllers\Admin\AdminProductsController@delete'
+    )->name('admin.products.delete');
+    # Edit
+    Route::get(
+        '/admin/products/{id}/edit',
+        'App\Http\Controllers\Admin\AdminProductsController@edit'
+    )->name('admin.products.edit');
+    Route::put(
+        '/admin/products/{id}/update',
+        'App\Http\Controllers\Admin\AdminProductsController@update'
+    )->name('admin.products.update');
+});
 
 Auth::routes();

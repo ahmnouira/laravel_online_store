@@ -201,3 +201,9 @@ $products = App\Models\Product::all()
     ],
   }
 ```
+
+## AdminAuthMiddleware
+
+```sh
+php artisan make:middleware AdminAuthMiddleware
+```
