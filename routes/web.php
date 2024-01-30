@@ -54,6 +54,11 @@ Route::get(
     'App\Http\Controllers\ProductController@show'
 )->name('products.show');
 
+
+Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('cart.index');
+Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name('cart.delete');
+Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name('cart.add');
+
 # Admin
 
 // $adminUrl = "App\Http\Controllers\Admin";

@@ -23,6 +23,7 @@
                 <div class="navbar-nav ms-auto">
                     <a href="{{ route('home.index') }}" class="nav-link active">Home</a>
                     <a href="{{ route('products.index') }}" class="nav-link active">Products</a>
+                    <a href="{{ route('cart.index') }}" class="nav-link active">Cart</a>
                     <a href="{{ route('home.about') }}" class="nav-link active">About</a>
                     <div class="vr bg-white mx-2 d-none d-lg-block"></div>
                     @guest
@@ -47,10 +48,9 @@
         </div>
     </header>
     <!-- header -->
-
-    <div class="container my-4">
+    <main class="container my-4">
         @yield('content')
-    </div>
+    </main>
     <!-- footer -->
     <div class="copyright py-4 text-center text-white">
         <div class="container">
