@@ -207,3 +207,9 @@ $products = App\Models\Product::all()
 ```sh
 php artisan make:middleware AdminAuthMiddleware
 ```
+
+## Order migration
+
+```sh
+php artisan make:migration create_orders_table
+```
