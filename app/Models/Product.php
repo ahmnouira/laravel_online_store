@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
@@ -20,6 +19,7 @@ class Product extends Model
      * $this->attributes['price'] - int - contains the product price
      * $this->attributes['created_at'] - timestamp -contains the product creation date
      * $this->attributes['updated_at'] - timestamp - contains the product update date
+     * $this->items - Items[] - contains the associated items 
      */
 
 
@@ -124,5 +124,20 @@ class Product extends Model
     public function setUpdatedAt($updated_at)
     {
         return $this->attributes['updated_at'] = $updated_at;
+    }
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
+
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    public function setItems($items)
+    {
+        $this->items = $items;
     }
 }
