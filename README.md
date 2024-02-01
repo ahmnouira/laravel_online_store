@@ -213,3 +213,9 @@ php artisan make:middleware AdminAuthMiddleware
 ```sh
 php artisan make:migration create_orders_table
 ```
+
+## Issues
+
+```txt
+We have not verified if the user has enough money to purchase.
+```

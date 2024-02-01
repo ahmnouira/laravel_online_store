@@ -37,15 +37,16 @@
         </table>
         <div class="row">
             <div class="text-end">
-                <a class="btn btn-outline-secondary mb-2">
-                    <b>
-                        Total to pay:</b>
-                    </b>${{$viewData['total']}}
-                </a>
-                <a class="btn bg-primary text-white mb-2">Purchase</a>
+                @if(count($viewData['products']) > 0)
+                <a class="btn bg-primary text-white mb-2" href="{{route('cart.purchase')}}">Purchase</a>
                 <a class="btn btn-danger mb-2" href="{{route('cart.delete')}}">
                     Remove all products form Cart
                 </a>
+                @endif
+                <button class="btn btn-outline-secondary disabled mb-2">
+                    Total to pay:
+                    </b>${{$viewData['total']}}
+                </button>
             </div>
         </div>
     </div>
