@@ -41,7 +41,7 @@ class Item extends Model
 
     public function getQuantity()
     {
-        $this->attributes['quantity'];
+        return  $this->attributes['quantity'];
     }
     public function setQuantity($quantity)
     {
@@ -49,7 +49,7 @@ class Item extends Model
     }
     public function getPrice()
     {
-        $this->attributes['price'];
+        return  $this->attributes['price'];
     }
     public function setPrice($price)
     {
@@ -58,7 +58,7 @@ class Item extends Model
 
     public function getOrderId()
     {
-        $this->attributes['order_id'];
+        return  $this->attributes['order_id'];
     }
     public function setOrderId($orderId)
     {
@@ -67,7 +67,7 @@ class Item extends Model
 
     public function getProductId()
     {
-        $this->attributes['product_id'];
+        return   $this->attributes['product_id'];
     }
     public function setProductId($product_id)
     {
@@ -76,7 +76,7 @@ class Item extends Model
 
     public function getCreatedAt()
     {
-        $this->attributes['created_at'];
+        return  $this->attributes['created_at'];
     }
     public function setCreatedAt($created_at)
     {
@@ -85,7 +85,7 @@ class Item extends Model
 
     public function getUpdatedAt()
     {
-        $this->attributes['updated_at'];
+        return   $this->attributes['updated_at'];
     }
     public function setUpdatedAt($updated_at)
     {

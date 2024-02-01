@@ -36,7 +36,7 @@ class Order extends Model
 
     public function getTotal()
     {
-        $this->attributes['total'];
+        return  $this->attributes['total'];
     }
     public function setTotal($total)
     {
@@ -44,7 +44,7 @@ class Order extends Model
     }
     public function getUserId()
     {
-        $this->attributes['user_id'];
+        return  $this->attributes['user_id'];
     }
     public function setUserId($user_id)
     {
@@ -53,7 +53,7 @@ class Order extends Model
 
     public function getCreatedAt()
     {
-        $this->attributes['created_at'];
+        return $this->attributes['created_at'];
     }
     public function setCreatedAt($created_at)
     {
@@ -62,7 +62,7 @@ class Order extends Model
 
     public function getUpdatedAt()
     {
-        $this->attributes['updated_at'];
+        return $this->attributes['updated_at'];
     }
     public function setUpdatedAt($updated_at)
     {
@@ -71,7 +71,12 @@ class Order extends Model
 
     public function user()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function getUser()
+    {
+        return $this->user;
     }
 
     public function setUser(User $user)
@@ -81,12 +86,12 @@ class Order extends Model
 
     public function items()
     {
-        $this->hasMany(Item::class);
+        return  $this->hasMany(Item::class);
     }
 
     public function getItems()
     {
-        return $this->items();
+        return $this->items;
     }
 
     public function setItems($items)

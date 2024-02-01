@@ -19,7 +19,7 @@ class Product extends Model
      * $this->attributes['price'] - int - contains the product price
      * $this->attributes['created_at'] - timestamp -contains the product creation date
      * $this->attributes['updated_at'] - timestamp - contains the product update date
-     * $this->items - Items[] - contains the associated items 
+     * $this->items - Items[] - contains the associated items
      */
 
 

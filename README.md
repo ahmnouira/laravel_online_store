@@ -219,3 +219,14 @@ php artisan make:migration create_orders_table
 ```txt
 We have not verified if the user has enough money to purchase.
 ```
+
+## Power of the Eloquent relationships
+
+```sh
+php artisan tinker 
+```
+
+```php
+Product::where('name', 'iPhone')->first()
+Product::where('name', 'iPhone')->first()->getItems()[0]->getOrder()->getUser()->getName(); 
+```
