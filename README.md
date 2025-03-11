@@ -8,6 +8,7 @@
 ## Serve
 
 ```sh
+composer install
 php artisan serve
 ```
 
