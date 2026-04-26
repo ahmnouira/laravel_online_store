@@ -5,6 +5,13 @@
 * ch10
 * ch28++
 
+## Install php and Composer
+
+```sh
+brew install php@8.2 
+sudo mv composer.phar /usr/local/bin/composer
+```
+
 ## Serve
 
 ```sh
