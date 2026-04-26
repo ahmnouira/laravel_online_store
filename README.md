@@ -136,6 +136,8 @@ Rollback: delete all the data also  !!!
 php artisan migrate:rollback
 ```
 
+## View SQLite
+
 ```sql
 sqlite3 db.sqlite3
 .schema --indent users
